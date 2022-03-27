@@ -47,9 +47,15 @@ export const RatingListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--grey);
+  background-color: ${(props) => {
+    return props.selected === true ? "var(--primary)" : "var(--grey)";
+  }};
   border-radius: 100%;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--light-grey);
+  }
 `;
 
 export const Button = styled.button`
@@ -62,4 +68,10 @@ export const Button = styled.button`
   font-size: 1.2rem;
   color: var(--white);
   text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    transition: 0.5s;
+  }
 `;
