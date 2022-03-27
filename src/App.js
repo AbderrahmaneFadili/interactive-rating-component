@@ -1,10 +1,18 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import AppStyle from "./components/App.styles";
+import Rating from "./components/Rating/Rating";
+import ThankYou from "./components/ThankYou/ThankYou";
 
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/" component={Rating} />
+        <Route path="/thank-you" component={ThankYou} />
+      </Switch>
+      <AppStyle />
+    </>
   );
 };
 
