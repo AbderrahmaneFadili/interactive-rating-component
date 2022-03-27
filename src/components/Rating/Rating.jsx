@@ -69,7 +69,13 @@ class Rating extends Component {
 
   //handle submit
   handleSubmit = (event) => {
-    this.props.history.push(`/thank-you/${this.state.selectedRatings.length}`);
+    if (this.state.selectedRatings.length > 0) {
+      this.props.history.push(
+        `/thank-you/${this.state.selectedRatings.length}`,
+      );
+    } else {
+      alert("Please Select a Rate Number !");
+    }
   };
 
   render() {
