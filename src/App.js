@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Switch>
         <Route exact path="/" component={Rating} />
-        <Route path="/thank-you" component={ThankYou} />
+        <Route path="/thank-you/:ratings" component={ThankYou} />
       </Switch>
       <AppStyle />
     </>

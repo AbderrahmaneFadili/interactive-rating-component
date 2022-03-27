@@ -68,7 +68,9 @@ class Rating extends Component {
   };
 
   //handle submit
-  handleSubmit = (event) => {};
+  handleSubmit = (event) => {
+    this.props.history.push(`/thank-you/${this.state.selectedRatings.length}`);
+  };
 
   render() {
     console.log(this.state.selectedRatings);
@@ -106,7 +108,7 @@ class Rating extends Component {
               ))}
           </RatingList>
           {/* Button */}
-          <Button>submit</Button>
+          <Button onClick={this.handleSubmit}>submit</Button>
         </RatingCard>
       </Container>
     );
