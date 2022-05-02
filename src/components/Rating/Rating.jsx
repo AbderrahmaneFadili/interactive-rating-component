@@ -39,47 +39,15 @@ class Rating extends Component {
       selectedRatings: [],
     };
   }
-  //handle selected rating
-  handleSelectedRating = ({ rate, selected }) => {
-    //Upadte the ratings list
-    this.setState({
-      ...this.state,
-      ratings: [
-        ...this.state.ratings.filter((item) => item.rate !== rate),
-        {
-          rate,
-          selected: !selected,
-        },
-      ],
-    });
-
-    //Set the Selected Ratings
-    if (this.state.selectedRatings.some((r) => r === rate)) {
-      this.setState({
-        selectedRatings: [
-          ...this.state.selectedRatings.filter((r) => r !== rate),
-        ],
-      });
-    } else {
-      this.setState({
-        selectedRatings: [...this.state.selectedRatings, rate],
-      });
-    }
-  };
 
   //handle submit
-  handleSubmit = (event) => {
-    if (this.state.selectedRatings.length > 0) {
-      this.props.history.push(
-        `/thank-you/${this.state.selectedRatings.length}`,
-      );
-    } else {
-      alert("Please Select a Rate Number !");
-    }
+  handleSubmit = (event) => {};
+  //handle selected rating
+  handleSelectedRating = (item) => {
+    console.log(item);
   };
 
   render() {
-    console.log(this.state.selectedRatings);
     return (
       <Container>
         {/* Raing Card */}
